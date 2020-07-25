@@ -1,4 +1,4 @@
-workspace "Urban"
+workspace "Cobalt"
 	architecture "x64"
 
 	configurations
@@ -10,8 +10,8 @@ workspace "Urban"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-project "Urban"
-	location "Urban"
+project "Cobalt"
+	location "Cobalt"
 	kind "SharedLib"
 	language "C++"
 
@@ -37,30 +37,30 @@ project "Urban"
 
 		defines
 		{
-			"UB_PLATFORM_WINDOWS",
-			"UB_BUILD_DLL"
+			"CB_PLATFORM_WINDOWS",
+			"CB_BUILD_DLL"
 		}
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/OpenWorld")
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
 	filter "configurations:Debug"
-		defines "UB_DEBUG"
+		defines "CB_DEBUG"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "UB_RELEASE"
+		defines "CB_RELEASE"
 		optimize "On"
 
 	filter "configurations:Dist"
-		defines "UB_DIST"
+		defines "CB_DIST"
 		optimize "On"
 
 
-project "OpenWorld"
-	location "OpenWorld"
+project "Sandbox"
+	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 
@@ -75,13 +75,13 @@ project "OpenWorld"
 
 	includedirs
 	{
-		"Urban/vendor/spdlog/include",
-		"Urban/src"
+		"Cobalt/vendor/spdlog/include",
+		"Cobalt/src"
 	}
 
 	links 
 	{
-		"Urban"
+		"Cobalt"
 	}
 
 	filter "system:windows"
@@ -91,17 +91,17 @@ project "OpenWorld"
 
 		defines
 		{
-			"UB_PLATFORM_WINDOWS"
+			"CB_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
-		defines "UB_DEBUG"
+		defines "CB_DEBUG"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "UB_RELEASE"
+		defines "CB_RELEASE"
 		optimize "On"
 
 	filter "configurations:Dist"
-		defines "UB_DIST"
+		defines "CB_DIST"
 		optimize "On"
