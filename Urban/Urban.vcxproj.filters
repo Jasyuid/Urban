@@ -4,6 +4,9 @@
     <Filter Include="Urban">
       <UniqueIdentifier>{FD53410E-6968-69BF-32EA-0C1F9EBD65F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Urban\Events">
+      <UniqueIdentifier>{4101ABFB-2D64-3AA0-D6E9-7256C22B0623}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Urban.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Urban\EntryPoint.h">
       <Filter>Urban</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Urban\Events\ApplicationEvent.h">
+      <Filter>Urban\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Urban\Events\Event.h">
+      <Filter>Urban\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Urban\Events\KeyEvent.h">
+      <Filter>Urban\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Urban\Events\MouseEvent.h">
+      <Filter>Urban\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Urban\Log.h">
       <Filter>Urban</Filter>
