@@ -1,5 +1,6 @@
 workspace "Cobalt"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -15,14 +16,19 @@ IncludeDir["GLFW"] = "Cobalt/vendor/GLFW/include"
 IncludeDir["Glad"] = "Cobalt/vendor/Glad/include"
 IncludeDir["ImGui"] = "Cobalt/vendor/imgui"
 
-include "Cobalt/vendor/GLFW"
-include "Cobalt/vendor/Glad"
-include "Cobalt/vendor/imgui"
+group "Dependencies"
+	include "Cobalt/vendor/GLFW"
+	include "Cobalt/vendor/Glad"
+	include "Cobalt/vendor/imgui"
+
+group ""
+
 
 project "Cobalt"
 	location "Cobalt"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir  ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir  ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -55,7 +61,6 @@ project "Cobalt"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -67,22 +72,22 @@ project "Cobalt"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines "CB_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "CB_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "CB_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 
@@ -90,6 +95,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir  ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir  ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -113,7 +119,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -123,15 +128,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "CB_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "CB_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "CB_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"

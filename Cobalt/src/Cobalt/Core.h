@@ -11,6 +11,10 @@
 	#error Not Windows!
 #endif
 
+#ifdef CB_DEBUG
+	#define CB_ENABLE_ASSERTS
+#endif
+
 // Assert functionality if needed
 #ifdef CB_ENABLE_ASSERTS
 	#define CB_ASSERT(x, ...) { if(!(x)) { CB_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }}
