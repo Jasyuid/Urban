@@ -35,6 +35,8 @@
       <Filter>Cobalt</Filter>
     </ClInclude>
     <ClInclude Include="src\cbpch.h" />
+    <ClInclude Include="src\Cobalt\Window.h" />
+    <ClInclude Include="src\Platform\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cobalt\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>Cobalt</Filter>
     </ClCompile>
     <ClCompile Include="src\cbpch.cpp" />
+    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

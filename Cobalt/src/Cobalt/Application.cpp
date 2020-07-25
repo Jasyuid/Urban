@@ -4,24 +4,27 @@
 #include "Cobalt/Events/ApplicationEvent.h"
 #include "Cobalt/Log.h"
 
+#include <GLFW/glfw3.h>
+
 namespace Cobalt {
 
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
 	{
-
 	}
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		CB_TRACE(e);
-
-		while (true);
+		while (m_Running)
+		{
+			glClearColor(0, 0.2, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
+		}
 	}
 
 }
