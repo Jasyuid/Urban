@@ -7,6 +7,9 @@
     <Filter Include="Cobalt\Events">
       <UniqueIdentifier>{9E7DA8FF-0A3E-2436-D378-6DB33FF86812}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Cobalt.h" />
@@ -31,21 +34,39 @@
     <ClInclude Include="src\Cobalt\Events\MouseEvent.h">
       <Filter>Cobalt\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cobalt\Layer.h">
+      <Filter>Cobalt</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\LayerStack.h">
+      <Filter>Cobalt</Filter>
+    </ClInclude>
     <ClInclude Include="src\Cobalt\Log.h">
       <Filter>Cobalt</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cobalt\Window.h">
+      <Filter>Cobalt</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\WindowsWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
     <ClInclude Include="src\cbpch.h" />
-    <ClInclude Include="src\Cobalt\Window.h" />
-    <ClInclude Include="src\Platform\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cobalt\Application.cpp">
       <Filter>Cobalt</Filter>
     </ClCompile>
+    <ClCompile Include="src\Cobalt\Layer.cpp">
+      <Filter>Cobalt</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\LayerStack.cpp">
+      <Filter>Cobalt</Filter>
+    </ClCompile>
     <ClCompile Include="src\Cobalt\Log.cpp">
       <Filter>Cobalt</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\WindowsWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
     <ClCompile Include="src\cbpch.cpp" />
-    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
