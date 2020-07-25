@@ -10,7 +10,9 @@ namespace Cobalt {
 
 	void Log::Init()
 	{
+		// Set formatting for log messages
 		spdlog::set_pattern("%^[%T] %n: %v%$");
+
 		s_CoreLogger = spdlog::stdout_color_mt("COBALT");
 		s_CoreLogger->set_level(spdlog::level::trace);
 

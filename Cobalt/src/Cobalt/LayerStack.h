@@ -19,7 +19,9 @@ namespace Cobalt {
 		std::vector<Layer*>::iterator begin() { return m_Layers.begin(); }
 		std::vector<Layer*>::iterator end() { return m_Layers.end(); }
 	private:
+		// The stack of layers
 		std::vector<Layer*> m_Layers;
+		// Iterator to determine where to push new layers
 		std::vector<Layer*>::iterator m_LayerInsert;
 	};
 }

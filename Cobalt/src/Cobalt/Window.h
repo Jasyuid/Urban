@@ -6,12 +6,14 @@
 
 namespace Cobalt {
 
+	// Struct for holding Window data
 	struct WindowProps
 	{
 		std::string Title;
 		unsigned int Width;
 		unsigned int Height;
 
+		// Default window configuration
 		WindowProps(const std::string& title = "Cobalt Engine",
 			unsigned int width = 1280,
 			unsigned int height = 720)
@@ -24,6 +26,7 @@ namespace Cobalt {
 	class COBALT_API Window
 	{
 	public:
+		// Function that will handle event callbacks
 		using EventCallbackFn = std::function<void(Event&)>;
 
 		virtual ~Window() {}

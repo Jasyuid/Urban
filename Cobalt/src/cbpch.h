@@ -1,5 +1,7 @@
 #pragma once
 
+// Cobalt Pre-Compiled Header
+
 #include <iostream>
 #include <memory>
 #include <utility>

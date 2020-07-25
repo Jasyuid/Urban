@@ -10,7 +10,7 @@ public:
 
 	void OnUpdate() override
 	{
-		CB_INFO("ExampleLayer::Update");
+		//CB_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Cobalt::Event& event) override

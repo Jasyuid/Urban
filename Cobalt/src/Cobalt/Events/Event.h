@@ -23,7 +23,8 @@ namespace Cobalt {
 		EventCategoryMouse			= BIT(3),
 		EventCategoryMouseButton	= BIT(4)
 	};
-	
+
+// Macros for implementing virtual event functions based on event type and category
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type;}\
 								virtual EventType GetEventType() const override { return GetStaticType(); }\
 								virtual const char* GetName() const override { return #type; }
@@ -49,6 +50,7 @@ namespace Cobalt {
 
 	class EventDispatcher
 	{
+		// Function to be run when specific event is encountered
 		template<typename T>
 		using EventFn = std::function<bool(T&)>;
 	public:
@@ -60,6 +62,7 @@ namespace Cobalt {
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
+			// Check if recieved event matches disbatcher type
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
 				m_Event.Handled = func(*(T*)&m_Event);

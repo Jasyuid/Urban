@@ -1,6 +1,6 @@
 #pragma once
 
-// Only used by Urban applications
+// Includes everything that can be used by Cobalt applications
 
 #include "Cobalt/Application.h"
 #include "Cobalt/Layer.h"
