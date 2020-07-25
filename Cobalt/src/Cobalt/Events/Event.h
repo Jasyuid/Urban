@@ -2,9 +2,6 @@
 
 #include "Cobalt/Core.h"
 
-#include <string>
-#include <Functional>
-
 namespace Cobalt {
 
 	enum class EventType

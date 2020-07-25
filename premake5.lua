@@ -18,6 +18,9 @@ project "Cobalt"
 	targetdir  ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir  ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "cbpch.h"
+	pchsource "Cobalt/src/cbpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
