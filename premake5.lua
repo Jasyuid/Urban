@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Cobalt/vendor/GLFW/include"
+IncludeDir["Glad"] = "Cobalt/vendor/Glad/include"
 
 include "Cobalt/vendor/GLFW"
+include "Cobalt/vendor/Glad"
 
 project "Cobalt"
 	location "Cobalt"
@@ -36,12 +38,14 @@ project "Cobalt"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -53,7 +57,8 @@ project "Cobalt"
 		defines
 		{
 			"CB_PLATFORM_WINDOWS",
-			"CB_BUILD_DLL"
+			"CB_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
