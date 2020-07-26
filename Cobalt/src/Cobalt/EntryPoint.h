@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 
 	// TEST LOGS
 	int a = 5;
-	CB_INFO("Hello! Var={0}", a);
+	CB_INFO("Hello! Var={1}", a);
 
 	// Create application singleton and start main loop
 	auto app = Cobalt::CreateApplication();

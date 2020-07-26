@@ -11,6 +11,7 @@
 	#error Not Windows!
 #endif
 
+// Enable asserts if in debug mode
 #ifdef CB_DEBUG
 	#define CB_ENABLE_ASSERTS
 #endif
@@ -27,4 +28,5 @@
 // Macro for changing specific bits
 #define BIT(x) (1 << x)
 
+// Bind event to function
 #define CB_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)

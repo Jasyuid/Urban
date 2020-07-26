@@ -3,6 +3,7 @@
 // Cobalt Pre-Compiled Header
 
 #include <iostream>
+#include <ctime>
 #include <memory>
 #include <utility>
 #include <algorithm>

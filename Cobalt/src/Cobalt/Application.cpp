@@ -57,7 +57,6 @@ namespace Cobalt {
 		{
 			glClearColor(0, 0.2, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
-
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 
