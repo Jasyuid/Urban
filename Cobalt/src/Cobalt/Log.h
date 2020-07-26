@@ -2,9 +2,6 @@
 
 #include "Core.h"
 
-// Windows Console Colors
-
-
 // Core log macros
 #define CB_CORE_TRACE(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_TRACE, s, __VA_ARGS__)
 #define CB_CORE_INFO(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_INFO, s, __VA_ARGS__)
@@ -106,6 +103,5 @@ namespace Cobalt {
 	};
 
 }
-
 
 //::Cobalt::Log::GetClientLogger()->fatal(__VA_ARGS__)
