@@ -1,10 +1,11 @@
 #pragma once
-#include "cbpch.h"
 
+#include "cbpch.h"
 #include "Cobalt/Core.h"
 
 namespace Cobalt {
 
+	// Event types
 	enum class EventType
 	{
 		None = 0,
@@ -14,7 +15,8 @@ namespace Cobalt {
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
-	enum EventCategory
+	// Event categories
+	enum EventCategory : unsigned char
 	{
 		None = 0,
 		EventCategoryApplication	= BIT(0),
@@ -29,23 +31,30 @@ namespace Cobalt {
 								virtual EventType GetEventType() const override { return GetStaticType(); }\
 								virtual const char* GetName() const override { return #type; }
 
-#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
+#define EVENT_CLASS_CATEGORY(category) virtual unsigned char GetCategoryFlags() const override { return category; }
 
 	class COBALT_API Event
 	{
 		friend class EventDispatcher;
 	public:
+		// Getter functions for events
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
-		virtual int GetCategoryFlags() const = 0;
+		virtual unsigned char GetCategoryFlags() const = 0;
+		// Get the name of the event
 		virtual std::string ToString() const { return GetName(); }
 
-		inline bool IsInCategory(EventCategory category)
+		// Check if event is in a category
+		inline bool IsInCategory(EventCategory category) const
 		{
 			return GetCategoryFlags() & category;
 		}
-	public:
-		bool Handled = false;
+
+		// Check if event has been handled
+		inline bool IsHandled() const { return m_Handled; }
+
+	private:
+		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -65,7 +74,7 @@ namespace Cobalt {
 			// Check if recieved event matches disbatcher type
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.Handled = func(*(T*)&m_Event);
+				m_Event.m_Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

@@ -20,7 +20,6 @@ group "Dependencies"
 	include "Cobalt/vendor/GLFW"
 	include "Cobalt/vendor/Glad"
 	include "Cobalt/vendor/imgui"
-
 group ""
 
 
@@ -107,7 +106,6 @@ project "Sandbox"
 
 	includedirs
 	{
-		"Cobalt/vendor/spdlog/include",
 		"Cobalt/src"
 	}
 

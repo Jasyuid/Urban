@@ -30,6 +30,12 @@ namespace Cobalt {
 		log_colors[SRC_APP + CAT_FATAL] = FG_RED;
 	}
 
+	void Log::format(unsigned char type, std::string m)
+	{
+		print(type, m);
+		count = 0;
+	}
+
 	void Log::print(unsigned char type, std::string m)
 	{
 		// Set the text color

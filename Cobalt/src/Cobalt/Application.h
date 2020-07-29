@@ -5,6 +5,7 @@
 #include "Cobalt/LayerStack.h"
 #include "Events/Event.h"
 #include "Cobalt/Events/ApplicationEvent.h"
+#include "Input.h"
 
 
 namespace Cobalt {
@@ -33,7 +34,6 @@ namespace Cobalt {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-	private:
 		static Application* s_Instance;
 	};
 

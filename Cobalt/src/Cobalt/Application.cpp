@@ -1,9 +1,8 @@
 #include "cbpch.h"
 #include "Application.h"
 
-#include "Cobalt/Log.h"
-
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 namespace Cobalt {
 
@@ -44,7 +43,7 @@ namespace Cobalt {
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
 			(*--it)->OnEvent(e);
-			if (e.Handled)
+			if (e.IsHandled())
 				break;
 		}
 	}
@@ -59,6 +58,11 @@ namespace Cobalt {
 			glClear(GL_COLOR_BUFFER_BIT);
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			if (Input::IsKeyPressed(GLFW_KEY_A))
+			{
+				CB_TRACE("Mouse Position: {0}", Input::GetMousePosition());
+			}
 
 			m_Window->OnUpdate();
 		}

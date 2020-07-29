@@ -1,6 +1,6 @@
 #pragma once
-#include "cbpch.h"
 
+#include "cbpch.h"
 #include "Cobalt/Core.h"
 #include "Cobalt/Events/Event.h"
 
@@ -39,6 +39,8 @@ namespace Cobalt {
 		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
+
+		inline virtual void* GetNativeWindow() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());
 

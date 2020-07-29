@@ -3,18 +3,18 @@
 #include "Core.h"
 
 // Core log macros
-#define CB_CORE_TRACE(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_TRACE, s, __VA_ARGS__)
-#define CB_CORE_INFO(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_INFO, s, __VA_ARGS__)
-#define CB_CORE_WARN(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_WARN, s, __VA_ARGS__)
-#define CB_CORE_ERROR(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_ERROR, s, __VA_ARGS__)
-#define CB_CORE_FATAL(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_FATAL, s, __VA_ARGS__)
+#define CB_CORE_TRACE(s, ...)	::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_TRACE, s, __VA_ARGS__)
+#define CB_CORE_INFO(s, ...)	::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_INFO, s, __VA_ARGS__)
+#define CB_CORE_WARN(s, ...)	::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_WARN, s, __VA_ARGS__)
+#define CB_CORE_ERROR(s, ...)	::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_ERROR, s, __VA_ARGS__)
+#define CB_CORE_FATAL(s, ...)	::Cobalt::Log::format(Cobalt::Log::SRC_CORE + Cobalt::Log::CAT_FATAL, s, __VA_ARGS__)
 
 // Client log macros
-#define CB_TRACE(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_TRACE, s, __VA_ARGS__)
-#define CB_INFO(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_INFO, s, __VA_ARGS__)
-#define CB_WARN(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_WARN, s, __VA_ARGS__)
-#define CB_ERROR(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_ERROR, s, __VA_ARGS__)
-#define CB_FATAL(s, ...) ::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_FATAL, s, __VA_ARGS__)
+#define CB_TRACE(s, ...)		::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_TRACE, s, __VA_ARGS__)
+#define CB_INFO(s, ...)			::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_INFO, s, __VA_ARGS__)
+#define CB_WARN(s, ...)			::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_WARN, s, __VA_ARGS__)
+#define CB_ERROR(s, ...)		::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_ERROR, s, __VA_ARGS__)
+#define CB_FATAL(s, ...)		::Cobalt::Log::format(Cobalt::Log::SRC_APP + Cobalt::Log::CAT_FATAL, s, __VA_ARGS__)
 
 namespace Cobalt {
 
@@ -33,7 +33,7 @@ namespace Cobalt {
 		static const unsigned char SRC_APP = 0x2 << 4;
 
 		// Window console colors
-		enum WIN_FG_COLORS
+		enum WIN_FG_COLORS : unsigned char
 		{
 			FG_BLACK = 0,
 			FG_BLUE = 1,
@@ -57,15 +57,11 @@ namespace Cobalt {
 		static void Init();
 
 		// Final format loop, move to printing
-		static void format(unsigned char type, std::string m)
-		{
-			print(type, m);
-			count = 0;
-		}
+		static void format(unsigned char type, std::string m);
 
 		// Add variables into string.
 		template <typename T, typename... Types>
-		static void format(unsigned char type, std::string m, T& arg1, Types&... arg2)
+		static void format(unsigned char type, std::string m, const T& arg1, const Types&... arg2)
 		{
 			// Go through and find all input spots
 			std::stringstream ss;
