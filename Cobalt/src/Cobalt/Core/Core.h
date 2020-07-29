@@ -5,7 +5,7 @@
 	#ifdef CB_BUILD_DLL
 		#define COBALT_API __declspec(dllexport)
 	#else
-		#define COBALT_API __declspec(dllimport)
+		#define COBALT_API 
 	#endif
 #else
 	#error Not Windows!

@@ -2,8 +2,8 @@
 
 #include "Core.h"
 #include "Window.h"
-#include "Cobalt/LayerStack.h"
-#include "Events/Event.h"
+#include "Cobalt/Core/LayerStack.h"
+#include "Cobalt/Events/Event.h"
 #include "Cobalt/Events/ApplicationEvent.h"
 #include "Input.h"
 

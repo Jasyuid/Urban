@@ -78,7 +78,7 @@ namespace Cobalt {
 
 			// Insert variable into message
 			std::stringstream ss2;
-			ss2.str("");
+			//ss2.str("");
 			ss2 << arg1;
 			m.replace(index, ss.str().length(), ss2.str());
 			count++;
