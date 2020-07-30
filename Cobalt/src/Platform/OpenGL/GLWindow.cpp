@@ -1,5 +1,5 @@
 #include "cbpch.h"
-#include "WindowsWindow.h"
+#include "GLWindow.h"
 
 #include "Cobalt/Events/ApplicationEvent.h"
 #include "Cobalt/Events/MouseEvent.h"
@@ -16,22 +16,25 @@ namespace Cobalt {
 		CB_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
+	// Create window using GLFW (OpenGL)
+#ifdef CB_OPENGL
 	Window* Window::Create(const WindowProps& props)
 	{
-		return new WindowsWindow(props);
+		return new GLWindow(props);
 	}
+#endif
 
-	WindowsWindow::WindowsWindow(const WindowProps& props)
+	GLWindow::GLWindow(const WindowProps& props)
 	{
 		Init(props);
 	}
 
-	WindowsWindow::~WindowsWindow()
+	GLWindow::~GLWindow()
 	{
 		Shutdown();
 	}
 
-	void WindowsWindow::Init(const WindowProps& props)
+	void GLWindow::Init(const WindowProps& props)
 	{
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
@@ -150,18 +153,18 @@ namespace Cobalt {
 		});
 	}
 
-	void WindowsWindow::Shutdown()
+	void GLWindow::Shutdown()
 	{
 		glfwDestroyWindow(m_Window);
 	}
 
-	void WindowsWindow::OnUpdate()
+	void GLWindow::OnUpdate()
 	{
 		glfwPollEvents();
 		glfwSwapBuffers(m_Window);
 	}
 
-	void WindowsWindow::SetVSync(bool enabled)
+	void GLWindow::SetVSync(bool enabled)
 	{
 		if (enabled)
 			glfwSwapInterval(1);
@@ -171,7 +174,7 @@ namespace Cobalt {
 		m_Data.VSync = enabled;
 	}
 
-	bool WindowsWindow::IsVSync() const
+	bool GLWindow::IsVSync() const
 	{
 		return m_Data.VSync;
 	}

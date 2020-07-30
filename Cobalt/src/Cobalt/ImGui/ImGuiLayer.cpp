@@ -4,7 +4,7 @@
 #include "imgui.h"
 #include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
 
-#include "Cobalt/Application.h"
+#include "Cobalt/Core/Application.h"
 
 //TEMP
 #include "GLFW/glfw3.h"

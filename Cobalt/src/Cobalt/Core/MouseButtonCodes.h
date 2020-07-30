@@ -1,6 +1,16 @@
 #pragma once
 
-// CB Mouse Button Codes
+// TODO: Add mouse button codes to enum?
+namespace Cobalt {
+
+	enum class MouseButtonCode : unsigned int
+	{
+
+	};
+
+}
+
+// GLFW Mouse Button Codes
 #define CB_MOUSE_BUTTON_1         0
 #define CB_MOUSE_BUTTON_2         1
 #define CB_MOUSE_BUTTON_3         2

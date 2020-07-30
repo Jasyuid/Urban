@@ -1,7 +1,17 @@
 #pragma once
 
+// TODO: Add keycodes to enum?
+namespace Cobalt {
+
+	enum class KeyCode : unsigned int
+	{
+
+	};
+
+}
+
 // GLFW Key Codes
-/* Printable keys */
+/* Printable Keys */
 #define CB_KEY_SPACE              32
 #define CB_KEY_APOSTROPHE         39  /* ' */
 #define CB_KEY_COMMA              44  /* , */
@@ -53,7 +63,7 @@
 #define CB_KEY_WORLD_1            161 /* non-US #1 */
 #define CB_KEY_WORLD_2            162 /* non-US #2 */
 
-/* Function keys */
+/* Function Keys */
 #define CB_KEY_ESCAPE             256
 #define CB_KEY_ENTER              257
 #define CB_KEY_TAB                258

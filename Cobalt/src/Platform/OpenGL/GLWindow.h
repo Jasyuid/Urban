@@ -1,16 +1,16 @@
 #pragma once
 
-#include "Cobalt/Window.h"
+#include "Cobalt/Core/Window.h"
 
 #include <GLFW/glfw3.h>
 
 namespace Cobalt {
 
-	class WindowsWindow : public Window
+	class GLWindow : public Window
 	{
 	public:
-		WindowsWindow(const WindowProps& props);
-		virtual ~WindowsWindow();
+		GLWindow(const WindowProps& props);
+		~GLWindow();
 
 		void OnUpdate() override;
 
@@ -21,11 +21,11 @@ namespace Cobalt {
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
 
-		inline virtual void* GetNativeWindow() const { return m_Window; }
+		inline virtual void* GetNativeWindow() const override { return m_Window; }
 
 	private:
-		virtual void Init(const WindowProps& props);
-		virtual void Shutdown();
+		void Init(const WindowProps& props);
+		void Shutdown();
 
 	private:
 		GLFWwindow* m_Window;

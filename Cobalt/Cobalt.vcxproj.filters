@@ -4,6 +4,9 @@
     <Filter Include="Cobalt">
       <UniqueIdentifier>{FAAE38AC-E650-6382-CF0B-77D6BB4CEAD2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Cobalt\Core">
+      <UniqueIdentifier>{923F783B-FEF4-F030-87E9-EA07F39DE734}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Cobalt\Events">
       <UniqueIdentifier>{9E7DA8FF-0A3E-2436-D378-6DB33FF86812}</UniqueIdentifier>
     </Filter>
@@ -16,20 +19,38 @@
     <Filter Include="Platform\OpenGL">
       <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\Windows">
-      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Cobalt.h" />
-    <ClInclude Include="src\Cobalt\Application.h">
-      <Filter>Cobalt</Filter>
+    <ClInclude Include="src\Cobalt\Core\Application.h">
+      <Filter>Cobalt\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cobalt\Core.h">
-      <Filter>Cobalt</Filter>
+    <ClInclude Include="src\Cobalt\Core\Core.h">
+      <Filter>Cobalt\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cobalt\EntryPoint.h">
-      <Filter>Cobalt</Filter>
+    <ClInclude Include="src\Cobalt\Core\EntryPoint.h">
+      <Filter>Cobalt\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\Core\Input.h">
+      <Filter>Cobalt\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\Core\KeyCodes.h">
+      <Filter>Cobalt\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\Core\Layer.h">
+      <Filter>Cobalt\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\Core\LayerStack.h">
+      <Filter>Cobalt\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\Core\Logger.h">
+      <Filter>Cobalt\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\Core\MouseButtonCodes.h">
+      <Filter>Cobalt\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\Core\Window.h">
+      <Filter>Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Events\ApplicationEvent.h">
       <Filter>Cobalt\Events</Filter>
@@ -46,53 +67,39 @@
     <ClInclude Include="src\Cobalt\ImGui\ImGuiLayer.h">
       <Filter>Cobalt\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cobalt\Layer.h">
-      <Filter>Cobalt</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Cobalt\LayerStack.h">
-      <Filter>Cobalt</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Cobalt\Log.h">
-      <Filter>Cobalt</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Cobalt\Window.h">
-      <Filter>Cobalt</Filter>
+    <ClInclude Include="src\Platform\OpenGL\GLWindow.h">
+      <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
-      <Filter>Platform\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="src\cbpch.h" />
-    <ClInclude Include="src\Cobalt\Input.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Cobalt\KeyCodes.h" />
-    <ClInclude Include="src\Cobalt\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Cobalt\Application.cpp">
-      <Filter>Cobalt</Filter>
+    <ClCompile Include="src\Cobalt\Core\Application.cpp">
+      <Filter>Cobalt\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\Core\Layer.cpp">
+      <Filter>Cobalt\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\Core\LayerStack.cpp">
+      <Filter>Cobalt\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\Core\Logger.cpp">
+      <Filter>Cobalt\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\ImGui\ImGuiLayer.cpp">
       <Filter>Cobalt\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Cobalt\Layer.cpp">
-      <Filter>Cobalt</Filter>
+    <ClCompile Include="src\Platform\OpenGL\GLInput.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Cobalt\LayerStack.cpp">
-      <Filter>Cobalt</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Cobalt\Log.cpp">
-      <Filter>Cobalt</Filter>
+    <ClCompile Include="src\Platform\OpenGL\GLWindow.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
-      <Filter>Platform\Windows</Filter>
-    </ClCompile>
     <ClCompile Include="src\cbpch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

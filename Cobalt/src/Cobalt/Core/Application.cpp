@@ -48,8 +48,6 @@ namespace Cobalt {
 		}
 	}
 
-	
-
 	void Application::Run()
 	{
 		while (m_Running)
@@ -61,7 +59,7 @@ namespace Cobalt {
 
 			if (Input::IsKeyPressed(GLFW_KEY_A))
 			{
-				CB_TRACE("Mouse Position: {0}", Input::GetMousePosition());
+				CB_TRACE("Mouse Position: {0}", Input::GetMousePosition().first);
 			}
 
 			m_Window->OnUpdate();

@@ -2,15 +2,15 @@
 
 #include "Core.h"
 #include "Window.h"
-#include "Cobalt/LayerStack.h"
-#include "Events/Event.h"
+#include "Cobalt/Core/LayerStack.h"
+#include "Cobalt/Events/Event.h"
 #include "Cobalt/Events/ApplicationEvent.h"
 #include "Input.h"
 
 
 namespace Cobalt {
 
-	class COBALT_API Application
+	class Application
 	{
 	public:
 		Application();

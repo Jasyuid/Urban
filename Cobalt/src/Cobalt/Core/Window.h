@@ -1,7 +1,7 @@
 #pragma once
 
 #include "cbpch.h"
-#include "Cobalt/Core.h"
+#include "Cobalt/Core/Core.h"
 #include "Cobalt/Events/Event.h"
 
 namespace Cobalt {
@@ -23,7 +23,7 @@ namespace Cobalt {
 
 	};
 
-	class COBALT_API Window
+	class Window
 	{
 	public:
 		// Function that will handle event callbacks
