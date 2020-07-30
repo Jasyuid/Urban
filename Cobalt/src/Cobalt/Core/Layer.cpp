@@ -10,7 +10,6 @@ namespace Cobalt {
 
 	Layer::~Layer()
 	{
-
 	}
 
 }

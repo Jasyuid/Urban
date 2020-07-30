@@ -1,6 +1,6 @@
 #pragma once
 
-// DLL loading macros for Windows
+// DLL loading macros for Windows (Not needed anymore since Cobalt is now a static library)
 #ifdef CB_PLATFORM_WINDOWS
 	#ifdef CB_BUILD_DLL
 		#define COBALT_API __declspec(dllexport)

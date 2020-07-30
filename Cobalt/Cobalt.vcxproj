@@ -76,7 +76,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cbpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CB_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;CB_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CB_PLATFORM_WINDOWS;CB_OPENGL;GLFW_INCLUDE_NONE;CB_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -96,7 +96,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cbpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CB_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;CB_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CB_PLATFORM_WINDOWS;CB_OPENGL;GLFW_INCLUDE_NONE;CB_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -120,7 +120,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cbpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CB_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;CB_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CB_PLATFORM_WINDOWS;CB_OPENGL;GLFW_INCLUDE_NONE;CB_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -144,32 +144,31 @@
     <ClInclude Include="src\Cobalt\Core\Application.h" />
     <ClInclude Include="src\Cobalt\Core\Core.h" />
     <ClInclude Include="src\Cobalt\Core\EntryPoint.h" />
+    <ClInclude Include="src\Cobalt\Core\Input.h" />
+    <ClInclude Include="src\Cobalt\Core\KeyCodes.h" />
+    <ClInclude Include="src\Cobalt\Core\Layer.h" />
+    <ClInclude Include="src\Cobalt\Core\LayerStack.h" />
+    <ClInclude Include="src\Cobalt\Core\Logger.h" />
+    <ClInclude Include="src\Cobalt\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\Cobalt\Core\Window.h" />
     <ClInclude Include="src\Cobalt\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Cobalt\Events\Event.h" />
     <ClInclude Include="src\Cobalt\Events\KeyEvent.h" />
     <ClInclude Include="src\Cobalt\Events\MouseEvent.h" />
     <ClInclude Include="src\Cobalt\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Cobalt\Core\Input.h" />
-    <ClInclude Include="src\Cobalt\Core\KeyCodes.h" />
-    <ClInclude Include="src\Cobalt\Core\Layer.h" />
-    <ClInclude Include="src\Cobalt\Core\LayerStack.h" />
-    <ClInclude Include="src\Cobalt\Core\Log.h" />
-    <ClInclude Include="src\Cobalt\Core\MouseButtonCodes.h" />
-    <ClInclude Include="src\Cobalt\Core\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\GLWindow.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cbpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cobalt\Core\Application.cpp" />
-    <ClCompile Include="src\Cobalt\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Cobalt\Core\Layer.cpp" />
     <ClCompile Include="src\Cobalt\Core\LayerStack.cpp" />
-    <ClCompile Include="src\Cobalt\Core\Log.cpp" />
+    <ClCompile Include="src\Cobalt\Core\Logger.cpp" />
+    <ClCompile Include="src\Cobalt\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\GLInput.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\GLWindow.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\cbpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

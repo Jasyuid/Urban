@@ -1,14 +1,13 @@
 #pragma once
 
-#include "Cobalt/Core/Core.h"
 #include "Cobalt/Events/Event.h"
 
 namespace Cobalt {
 
-	class COBALT_API Layer
+	class Layer
 	{
 	public:
-		Layer(const std::string& name = "Layer");
+		Layer(const std::string& debugName = "Layer");
 		virtual ~Layer();
 
 		virtual void OnAttach() {};
@@ -19,6 +18,7 @@ namespace Cobalt {
 		inline const std::string& GetName() const { return m_DebugName; }
 
 	protected:
+		// Debug name for the layer (Should not be used for finding specific layers)
 		std::string m_DebugName;
 	};
 

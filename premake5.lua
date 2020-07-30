@@ -64,6 +64,7 @@ project "Cobalt"
 		defines
 		{
 			"CB_PLATFORM_WINDOWS",
+			"CB_OPENGL",
 			"GLFW_INCLUDE_NONE"
 		}
 

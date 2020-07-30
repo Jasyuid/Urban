@@ -23,7 +23,7 @@ namespace Cobalt {
 
 	};
 
-	class COBALT_API Window
+	class Window
 	{
 	public:
 		// Function that will handle event callbacks

@@ -1,11 +1,10 @@
 #pragma once
 
-#include "Cobalt/Core/Core.h"
 #include "Layer.h"
 
 namespace Cobalt {
 
-	class COBALT_API LayerStack
+	class LayerStack
 	{
 	public:
 		LayerStack();
@@ -22,7 +21,7 @@ namespace Cobalt {
 		// The stack of layers
 		std::vector<Layer*> m_Layers;
 		// Iterator to determine where to push new layers
-		std::vector<Layer*>::iterator m_LayerInsert;
+		unsigned int m_LayerInsertIndex = 0;
 	};
 }
 

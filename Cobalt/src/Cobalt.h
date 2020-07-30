@@ -4,7 +4,7 @@
 
 #include "Cobalt/Core/Application.h"
 #include "Cobalt/Core/Layer.h"
-#include "Cobalt/Core/Log.h"
+#include "Cobalt/Core/Logger.h"
 #include "Cobalt/ImGui/ImGuiLayer.h"
 
 // Entry Point

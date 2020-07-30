@@ -1,17 +1,15 @@
 #pragma once
 
 // Defining the entry point for the application on a windows machine
-#ifdef CB_PLATFORM_WINDOWS
+// Don't think the windows part matters for this file
+//#ifdef CB_PLATFORM_WINDOWS
 
 extern Cobalt::Application* Cobalt::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	// Initiate the logger
-	Cobalt::Log::Init();
-	CB_CORE_WARN("Started Log!");
-
 	// TEST LOGS
+	CB_CORE_WARN("Started Log!");
 	int a = 5;
 	CB_INFO("Hello {0}!", a);
 
@@ -21,4 +19,4 @@ int main(int argc, char** argv)
 	delete app;
 }
 
-#endif
+//#endif

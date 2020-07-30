@@ -10,7 +10,7 @@
 
 namespace Cobalt {
 
-	class COBALT_API Application
+	class Application
 	{
 	public:
 		Application();
