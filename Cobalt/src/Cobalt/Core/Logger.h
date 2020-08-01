@@ -19,7 +19,7 @@
 namespace Cobalt {
 
 	// Log categories
-	enum LogCategory : unsigned char
+	enum LogCategory
 	{
 		Trace = 0x1,
 		Info = 0x2,
@@ -29,7 +29,7 @@ namespace Cobalt {
 	};
 
 	// Log sources
-	enum LogSource : unsigned char
+	enum LogSource
 	{
 		Core = 0x1 << 4,
 		App = 0x2 << 4
@@ -38,7 +38,7 @@ namespace Cobalt {
 	namespace Logger {
 		// Add variables into string.
 		template <typename T, typename... Types>
-		void formatMessage(int count, unsigned char type, std::string m, const T& arg1, const Types&... arg2)
+		void formatMessage(int count, unsigned int type, std::string m, const T& arg1, const Types&... arg2)
 		{
 			// Go through and find all input spots
 			std::stringstream ss;
@@ -63,7 +63,7 @@ namespace Cobalt {
 		}
 
 		// Final format loop, move to printing
-		void formatMessage(int count, unsigned char type, std::string m);
+		void formatMessage(int count, unsigned int type, std::string m);
 
 	}
 

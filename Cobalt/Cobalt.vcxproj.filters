@@ -13,6 +13,9 @@
     <Filter Include="Cobalt\ImGui">
       <UniqueIdentifier>{A4F7EAAA-905A-7A4F-39E0-B205252246D2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Cobalt\RenderingTest">
+      <UniqueIdentifier>{07D1E3F2-F35F-6DBC-9C7E-81B788EC7D62}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
@@ -67,6 +70,27 @@
     <ClInclude Include="src\Cobalt\ImGui\ImGuiLayer.h">
       <Filter>Cobalt\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cobalt\RenderingTest\IndexBuffer.h">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\RenderingTest\Renderer.h">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\RenderingTest\RenderingTest.h">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\RenderingTest\Shader.h">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\RenderingTest\VertexArray.h">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\RenderingTest\VertexBuffer.h">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\RenderingTest\VertexBufferLayout.h">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\GLWindow.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
@@ -90,6 +114,24 @@
     </ClCompile>
     <ClCompile Include="src\Cobalt\ImGui\ImGuiLayer.cpp">
       <Filter>Cobalt\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\RenderingTest\IndexBuffer.cpp">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\RenderingTest\Renderer.cpp">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\RenderingTest\RenderingTest.cpp">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\RenderingTest\Shader.cpp">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\RenderingTest\VertexArray.cpp">
+      <Filter>Cobalt\RenderingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\RenderingTest\VertexBuffer.cpp">
+      <Filter>Cobalt\RenderingTest</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\GLInput.cpp">
       <Filter>Platform\OpenGL</Filter>

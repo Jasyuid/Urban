@@ -1,8 +1,12 @@
 #include "cbpch.h"
 #include "Application.h"
 
+#include "KeyCodes.h"
+#include "MouseButtonCodes.h"
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 
 namespace Cobalt {
 
@@ -17,6 +21,9 @@ namespace Cobalt {
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		// OPENGL TESTING
+		m_RenderingTest = std::unique_ptr<RenderingTest>(new RenderingTest());
 	}
 
 	Application::~Application()
@@ -52,17 +59,25 @@ namespace Cobalt {
 	{
 		while (m_Running)
 		{
-			glClearColor(0, 0.2, 1, 1);
+			// Window backgroud
+			glClearColor(0, 0, 0.1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			// Update Layers
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
-
-			if (Input::IsKeyPressed(GLFW_KEY_A))
+			
+			// TESTING INPUT
+			if (Input::IsMouseButtonPressed(CB_MOUSE_BUTTON_LEFT))
 			{
-				CB_TRACE("Mouse Position: {0}", Input::GetMousePosition().first);
+				CB_TRACE("Left Mouse Button Pressed!");
 			}
 
+			// OPENGL TESTING
+			m_RenderingTest->OnUpdate();
+
 			m_Window->OnUpdate();
+
 		}
 	}
 

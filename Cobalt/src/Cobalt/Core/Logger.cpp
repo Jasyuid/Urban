@@ -12,7 +12,7 @@ namespace Cobalt {
 	namespace Logger {
 
 		// Window console colors
-		enum WIN_FG_COLORS : unsigned char
+		enum WIN_FG_COLORS
 		{
 			FG_BLACK = 0,
 			FG_BLUE = 1,
@@ -33,7 +33,7 @@ namespace Cobalt {
 		};
 
 		// Map containing all console color codes
-		std::unordered_map<unsigned char, unsigned char> log_colors = { {Core + Trace, FG_GREEN},
+		std::unordered_map<unsigned int, unsigned int> log_colors = { {Core + Trace, FG_GREEN},
 																		{Core + Info, FG_WHITE},
 																		{Core + Warn, FG_YELLOW},
 																		{Core + Error, FG_LIGHTRED},
@@ -45,7 +45,7 @@ namespace Cobalt {
 																		{App + Fatal, FG_RED} };
 		
 		// Prints out log message
-		void printMessage(unsigned char type, std::string m)
+		void printMessage(unsigned int type, std::string m)
 		{
 			// Set the text color
 			SET_CONSOLE_COLOR(log_colors[type]);
@@ -81,7 +81,7 @@ namespace Cobalt {
 			SET_CONSOLE_COLOR(FG_WHITE);
 		}
 
-		void formatMessage(int count, unsigned char type, std::string m)
+		void formatMessage(int count, unsigned int type, std::string m)
 		{
 			printMessage(type, m);
 		}

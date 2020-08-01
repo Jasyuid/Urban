@@ -11,7 +11,7 @@ namespace Cobalt {
 
 	static bool s_GLFWInitialized = false;
 	
-	static void GLFWErrorCallback(int error, const char* description)
+	void GLFWErrorCallback(int error, const char* description)
 	{
 		CB_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
@@ -41,7 +41,7 @@ namespace Cobalt {
 		m_Data.Height = props.Height;
 
 		CB_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
-
+		
 		// Initiliaze GLFW
 		if (!s_GLFWInitialized) 
 		{
@@ -50,6 +50,12 @@ namespace Cobalt {
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}
+
+		/*
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		*/
 
 		// Create Window and set up Glad
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
@@ -155,7 +161,10 @@ namespace Cobalt {
 
 	void GLWindow::Shutdown()
 	{
+		CB_CORE_INFO("Destroying Window");
 		glfwDestroyWindow(m_Window);
+		CB_CORE_INFO("Terminating GLFW");
+		glfwTerminate();
 	}
 
 	void GLWindow::OnUpdate()

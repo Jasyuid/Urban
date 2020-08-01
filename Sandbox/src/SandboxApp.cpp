@@ -25,7 +25,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Cobalt::ImGuiLayer());
+		//PushOverlay(new Cobalt::ImGuiLayer());
 	}
 
 	~Sandbox()

@@ -14,6 +14,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Cobalt/vendor/GLFW/include"
 IncludeDir["Glad"] = "Cobalt/vendor/Glad/include"
+IncludeDir["glm"] = "Cobalt/vendor/glm"
 IncludeDir["ImGui"] = "Cobalt/vendor/imgui"
 
 group "Dependencies"
@@ -46,6 +47,7 @@ project "Cobalt"
 		"%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.ImGui}"
 	}
 
@@ -107,7 +109,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Cobalt/src",
-		"Cobalt/vendor"
+		"Cobalt/vendor",
+		"%{IncludeDir.Glad}"
 	}
 
 	links 
