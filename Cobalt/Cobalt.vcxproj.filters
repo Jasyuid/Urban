@@ -1,147 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Cobalt">
-      <UniqueIdentifier>{FAAE38AC-E650-6382-CF0B-77D6BB4CEAD2}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Cobalt\Core">
-      <UniqueIdentifier>{923F783B-FEF4-F030-87E9-EA07F39DE734}</UniqueIdentifier>
+    <Filter Include="src\Cobalt">
+      <UniqueIdentifier>{31889709-1D40-D956-8647-B2B2721E7447}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Cobalt\Events">
-      <UniqueIdentifier>{9E7DA8FF-0A3E-2436-D378-6DB33FF86812}</UniqueIdentifier>
+    <Filter Include="src\Cobalt\Core">
+      <UniqueIdentifier>{29735253-95FE-BF17-9E0F-430C0A1A1C18}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Cobalt\ImGui">
-      <UniqueIdentifier>{A4F7EAAA-905A-7A4F-39E0-B205252246D2}</UniqueIdentifier>
+    <Filter Include="src\Cobalt\Events">
+      <UniqueIdentifier>{F5F2DD76-6109-DC0C-AA80-672E16D6AC94}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Cobalt\RenderingTest">
-      <UniqueIdentifier>{07D1E3F2-F35F-6DBC-9C7E-81B788EC7D62}</UniqueIdentifier>
+    <Filter Include="src\Cobalt\ImGui">
+      <UniqueIdentifier>{1B9E0BBE-0797-2A10-30C9-0F951C210A1C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform">
-      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    <Filter Include="src\Cobalt\RenderingTest">
+      <UniqueIdentifier>{7EFE22FD-6A23-727D-936E-570D7FF2709B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\OpenGL">
-      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Cobalt.h" />
+    <ClInclude Include="src\Cobalt.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Cobalt\Core\Application.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\Core.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\EntryPoint.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\Input.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\KeyCodes.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\Layer.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\LayerStack.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\Logger.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\MouseButtonCodes.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Core\Window.h">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Events\ApplicationEvent.h">
-      <Filter>Cobalt\Events</Filter>
+      <Filter>src\Cobalt\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Events\Event.h">
-      <Filter>Cobalt\Events</Filter>
+      <Filter>src\Cobalt\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Events\KeyEvent.h">
-      <Filter>Cobalt\Events</Filter>
+      <Filter>src\Cobalt\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\Events\MouseEvent.h">
-      <Filter>Cobalt\Events</Filter>
+      <Filter>src\Cobalt\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\ImGui\ImGuiLayer.h">
-      <Filter>Cobalt\ImGui</Filter>
+      <Filter>src\Cobalt\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\RenderingTest\IndexBuffer.h">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\RenderingTest\Renderer.h">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\RenderingTest\RenderingTest.h">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\RenderingTest\Shader.h">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cobalt\RenderingTest\Texture.h">
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\RenderingTest\VertexArray.h">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\RenderingTest\VertexBuffer.h">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClInclude>
     <ClInclude Include="src\Cobalt\RenderingTest\VertexBufferLayout.h">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\GLWindow.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\cbpch.h" />
+    <ClInclude Include="src\cbpch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cobalt\Core\Application.cpp">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\Core\Layer.cpp">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\Core\LayerStack.cpp">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\Core\Logger.cpp">
-      <Filter>Cobalt\Core</Filter>
+      <Filter>src\Cobalt\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\ImGui\ImGuiLayer.cpp">
-      <Filter>Cobalt\ImGui</Filter>
+      <Filter>src\Cobalt\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\RenderingTest\IndexBuffer.cpp">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\RenderingTest\Renderer.cpp">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\RenderingTest\RenderingTest.cpp">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\RenderingTest\Shader.cpp">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cobalt\RenderingTest\Texture.cpp">
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\RenderingTest\VertexArray.cpp">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClCompile>
     <ClCompile Include="src\Cobalt\RenderingTest\VertexBuffer.cpp">
-      <Filter>Cobalt\RenderingTest</Filter>
+      <Filter>src\Cobalt\RenderingTest</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\GLInput.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\GLWindow.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\cbpch.cpp" />
+    <ClCompile Include="src\cbpch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -15,7 +15,7 @@ public:
 
 	void OnEvent(Cobalt::Event& event) override
 	{
-		CB_TRACE("{0}", event);
+		//CB_TRACE("{0}", event);
 	}
 };
 

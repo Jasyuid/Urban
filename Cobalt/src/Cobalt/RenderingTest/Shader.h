@@ -1,5 +1,7 @@
 #pragma once
 
+#include <glm/glm.hpp>
+
 struct ShaderProgramSource
 {
 	std::string VertexSource;
@@ -16,13 +18,16 @@ public:
 	void Unbind() const;
 
 	// Set uniforms
+	void setUniform1i(const std::string& name, int v0);
+	void setUniform1f(const std::string& name, float v0);
 	void setUniform4f(const std::string& name, float v0, float v1, float v2, float v3);
+	void setUniformMat4f(const std::string& name, const glm::mat4& matrix);
 
 private:
 	ShaderProgramSource ParseShader(const std::string& filepath);
 	unsigned int CompileShader(unsigned int type, const std::string& source);
 	unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
-	unsigned int GetUniformLocation(const std::string& name);
+	int GetUniformLocation(const std::string& name);
 
 private:
 	std::string m_FilePath;

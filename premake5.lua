@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Cobalt/vendor/GLFW/include"
 IncludeDir["Glad"] = "Cobalt/vendor/Glad/include"
 IncludeDir["glm"] = "Cobalt/vendor/glm"
+IncludeDir["stb_image"] = "Cobalt/vendor/stb_image"
 IncludeDir["ImGui"] = "Cobalt/vendor/imgui"
 
 group "Dependencies"
@@ -39,7 +40,9 @@ project "Cobalt"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp"
 	}
 
 	includedirs
@@ -48,6 +51,7 @@ project "Cobalt"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.ImGui}"
 	}
 
@@ -110,7 +114,9 @@ project "Sandbox"
 	{
 		"Cobalt/src",
 		"Cobalt/vendor",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links 
